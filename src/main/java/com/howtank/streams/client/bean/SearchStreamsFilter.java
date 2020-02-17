@@ -1,4 +1,4 @@
-package com.howtank.streams.client;
+package com.howtank.streams.client.bean;
 
 import lombok.Builder;
 import lombok.Value;

@@ -1,5 +1,7 @@
 package com.howtank.streams.client;
 
+import com.howtank.streams.client.bean.SearchStreamsFilter;
+import com.howtank.streams.client.exception.HowtankApiException;
 import com.howtank.streams.model.Presence;
 import com.howtank.streams.model.Stream;
 import com.howtank.streams.model.StreamMessage;
@@ -9,7 +11,7 @@ import java.util.List;
 
 public interface StreamClient {
     String getCurrentUserId();
-    List<Stream> getCurrentUserStreams();
+    List<Stream> getCurrentUserStreams() throws HowtankApiException;
     List<Stream> searchStreams(SearchStreamsFilter searchStreamsFilter);
     List<Presence> getPresence(String streamId);
 
