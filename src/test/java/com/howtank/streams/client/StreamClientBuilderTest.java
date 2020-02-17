@@ -11,6 +11,8 @@ class StreamClientBuilderTest {
     void buildAndGetUser() {
         ClientProperties properties = ClientProperties.builder()
                 .currentUserId(A_USER_ID)
+                .userAgent("Android Widget")
+                .accessToken("TOKEN")
                 .build();
 
         StreamClient streamClient = new StreamClientBuilder().build(properties);
@@ -20,12 +22,15 @@ class StreamClientBuilderTest {
     }
 
     @Test
-    void buildWithNoUser() {
-        ClientProperties properties = ClientProperties.builder().build();
+    void builPropertiesdWithNoUser() {
+        ClientProperties properties = null;
 
-        StreamClient streamClient = new StreamClientBuilder().build(properties);
+        try {
+            properties = ClientProperties.builder().build();
 
-        Assertions.assertNotNull(streamClient);
-        Assertions.assertEquals(A_USER_ID, streamClient.getCurrentUserId());
+            Assertions.fail("currentUserId is null but not exception thrown");
+        } catch (Exception e) {
+            Assertions.assertTrue(e instanceof NullPointerException);
+        }
     }
 }
