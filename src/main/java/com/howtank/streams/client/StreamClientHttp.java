@@ -58,9 +58,7 @@ public class StreamClientHttp implements StreamClient {
     public List<Stream> getCurrentUserStreams() throws HowtankApiException {
         GetUserStreamsApiResponse getUserStreamsApiResponse = performGet(GET_USER_STREAMS, GetUserStreamsApiResponse.class, Collections.emptyList());
 
-        if (!getUserStreamsApiResponse.isAccepted()) {
-            throw new HowtankApiException(getUserStreamsApiResponse.getError(), getUserStreamsApiResponse.getReason());
-        }
+        validateAcceptedResponse(getUserStreamsApiResponse);
         return getUserStreamsApiResponse.getStreams();
     }
 
