@@ -1,27 +1,28 @@
 package com.howtank.streams.model;
 
-import com.google.gson.annotations.SerializedName;
-import lombok.Builder;
-import lombok.Value;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
 @Builder
-@Value
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Host {
     private String id;
     private String name;
 
-    @SerializedName(value = "display_name")
+    @JsonProperty("display_name")
     private String displayName;
 
-    @SerializedName(value = "partner_id")
+    @JsonProperty("partner_id")
     private String partnerId;
 
-    @SerializedName(value = "howtank_host")
+    @JsonProperty("howtank_host")
     private boolean howtankHost;
 
-    @SerializedName(value = "default_stream")
+    @JsonProperty("default_stream")
     private boolean defaultStream;
 
-    @SerializedName(value = "landing_stream")
+    @JsonProperty("landing_stream")
     private boolean landingStream;
 }

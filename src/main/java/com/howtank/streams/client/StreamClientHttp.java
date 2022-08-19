@@ -1,9 +1,8 @@
 package com.howtank.streams.client;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.howtank.streams.client.api.CommandApiClient;
-import com.howtank.streams.client.api.CommandType;
 import com.howtank.streams.client.api.RequestParameters;
 import com.howtank.streams.client.api.response.*;
 import com.howtank.streams.client.bean.SearchStreamsFilter;
@@ -16,7 +15,7 @@ import lombok.NonNull;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
-import java.lang.reflect.Type;
+import java.text.DateFormat;
 import java.util.*;
 
 import static com.howtank.streams.client.api.CommandType.*;
@@ -28,7 +27,6 @@ public class StreamClientHttp implements StreamClient {
     @Getter
     private final String currentUserId;
     private final CommandApiClient client;
-    private final Gson gson;
 
     StreamClientHttp(
             @NonNull final String currentUserId,
@@ -48,15 +46,20 @@ public class StreamClientHttp implements StreamClient {
             endpointWithSchema = endpoint;
         }
 
-        this.client = new CommandApiClient(endpointWithSchema, userAgent, accessToken);
+        this.client = new CommandApiClient(endpointWithSchema, userAgent, accessToken, getObjectMapper());
+    }
 
-        this.gson = new GsonBuilder()
-                .create();
+    private ObjectMapper getObjectMapper() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        objectMapper.configure(DeserializationFeature.READ_UNKNOWN_ENUM_VALUES_AS_NULL, false);
+        objectMapper.setDateFormat(DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.DEFAULT));
+        return objectMapper;
     }
 
     @Override
     public List<Stream> getCurrentUserStreams() throws HowtankApiException {
-        GetUserStreamsApiResponse getUserStreamsApiResponse = performGet(GET_USER_STREAMS, GetUserStreamsApiResponse.class, Collections.emptyList());
+        GetUserStreamsApiResponse getUserStreamsApiResponse = client.performGet(GET_USER_STREAMS, Collections.emptyList(), GetUserStreamsApiResponse.class);
 
         validateAcceptedResponse(getUserStreamsApiResponse);
         return getUserStreamsApiResponse.getStreams();
@@ -73,7 +76,7 @@ public class StreamClientHttp implements StreamClient {
                 .addIfPresent(RequestParameters.SUBSCRIBED, searchStreamsFilter.getSubscribed())
                 .build();
 
-        GetStreamsApiResponse getStreamsApiResponse = performGet(GET_STREAMS, GetStreamsApiResponse.class, params);
+        GetStreamsApiResponse getStreamsApiResponse = client.performGet(GET_STREAMS, params, GetStreamsApiResponse.class);
 
         validateAcceptedResponse(getStreamsApiResponse);
         return getStreamsApiResponse.getStreams();
@@ -87,7 +90,7 @@ public class StreamClientHttp implements StreamClient {
                 .addIfPresent(RequestParameters.STREAM_ID, streamId)
                 .build();
 
-        GetPresenceApiResponse getPresenceApiResponse = performGet(GET_PRESENCE, GetPresenceApiResponse.class, params);
+        GetPresenceApiResponse getPresenceApiResponse = client.performGet(GET_PRESENCE, params, GetPresenceApiResponse.class);
 
         validateAcceptedResponse(getPresenceApiResponse);
         return getPresenceApiResponse.getPresences();
@@ -135,7 +138,7 @@ public class StreamClientHttp implements StreamClient {
                 .addIfPresent(RequestParameters.TYPE, "group_chat")
                 .build();
 
-        AddStreamMessageApiResponse response = performGet(ADD_STREAM_MESSAGE, AddStreamMessageApiResponse.class, params);
+        AddStreamMessageApiResponse response = client.performGet(ADD_STREAM_MESSAGE, params, AddStreamMessageApiResponse.class);
         validateAcceptedResponse(response);
     }
 
@@ -150,7 +153,7 @@ public class StreamClientHttp implements StreamClient {
                 .addIfPresent(RequestParameters.TYPE, "notification")
                 .build();
 
-        AddStreamMessageApiResponse response = performGet(PUSH_STREAM_MESSAGE, AddStreamMessageApiResponse.class, params);
+        AddStreamMessageApiResponse response = client.performGet(PUSH_STREAM_MESSAGE, params, AddStreamMessageApiResponse.class);
         validateAcceptedResponse(response);
     }
 
@@ -173,15 +176,10 @@ public class StreamClientHttp implements StreamClient {
                 .addIfPresent(RequestParameters.TIMESTAMP, timestamp)
                 .addIfPresent(RequestParameters.COUNT, count)
                 .build();
-        GetStreamMessagesApiResponse getStreamMessagesApiResponse = performGet(GET_STREAM_MESSAGES, GetStreamMessagesApiResponse.class, params);
+        GetStreamMessagesApiResponse getStreamMessagesApiResponse = this.client.performGet(GET_STREAM_MESSAGES, params, GetStreamMessagesApiResponse.class);
 
         validateAcceptedResponse(getStreamMessagesApiResponse);
         return getStreamMessagesApiResponse.getMessages();
-    }
-
-    private <T> T performGet(CommandType commandType, Type typeOfT, List<NameValuePair> params) throws HowtankApiException {
-        String response = this.client.performGet(commandType, params);
-        return gson.fromJson(response, typeOfT);
     }
 }
 

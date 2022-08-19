@@ -1,21 +1,22 @@
 package com.howtank.streams.model;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.howtank.streams.model.types.ConnectionStatusType;
-import lombok.Builder;
-import lombok.Value;
+import lombok.*;
 
 import java.util.Date;
 
 @Builder
-@Value
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Presence {
-    @SerializedName(value = "user")
+    @JsonProperty("user")
     private User user;
 
-    @SerializedName(value = "connection_date")
+    @JsonProperty("connection_date")
     private Date connectionDate;
 
-    @SerializedName(value = "connection_status")
+    @JsonProperty("connection_status")
     private ConnectionStatusType connectionStatus;
 }
