@@ -6,4 +6,9 @@ import lombok.Value;
 @Value
 @Builder
 public class SearchStreamsFilter {
+    Integer from;
+    Integer size;
+    Boolean discoverable;
+    Boolean subscribed;
+    String keyword;
 }
