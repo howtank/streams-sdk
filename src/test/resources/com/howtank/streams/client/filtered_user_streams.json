@@ -1,0 +1,21 @@
+{
+  "last": true,
+  "streams": [
+    {
+      "description": "Primary stream of Team howtank",
+      "presence_id": "private-local.presence.stream-howtank",
+      "personal": false,
+      "title": "Team howtank",
+      "discoverable": true,
+      "all_users": false,
+      "id": "howtank",
+      "first_stream_color": "1FA2FF",
+      "channel_id": "private-local.stream.howtank",
+      "has_owner_access": true,
+      "second_stream_color": "5662E8"
+    }
+  ],
+  "accepted": true,
+  "ctag": "5bcfb95e3d64b",
+  "api_version": 4
+}

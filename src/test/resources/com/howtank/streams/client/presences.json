@@ -1,0 +1,21 @@
+{
+  "stream_id": "howtank",
+  "count": 1,
+  "accepted": true,
+  "ctag": "5bcfb95e3d64b",
+  "api_version": 4,
+  "users": [
+    {
+      "user_id": "1231131312dwqw",
+      "user_has_photo": false,
+      "user_display_name": "ADMIN",
+      "howtank_team": false,
+      "moderator": false,
+      "admin": true,
+      "bot": true,
+      "videochat": false,
+      "points": 0,
+      "connection_date": "Aug 24, 2022 8:20:51 AM"
+    }
+  ]
+}

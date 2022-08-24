@@ -37,7 +37,7 @@ public class Stream {
     @JsonProperty("experimental_flags")
     private Set<String> experimentalFlags;
 
-    @JsonProperty("available_message_types")
+    @JsonProperty("available_types")
     private Set<String> availableMessageTypes;
 
     @JsonProperty("creator_user_id")
