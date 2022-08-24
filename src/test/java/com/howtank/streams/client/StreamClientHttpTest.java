@@ -72,9 +72,7 @@ public class StreamClientHttpTest {
                         .build());
         registerInvalidTokenExpectation(CommandType.GET_USER_STREAMS, null);
 
-        Assertions.assertThrows(HowtankApiException.class, () -> {
-            streamClient2.getCurrentUserStreams();
-        });
+        Assertions.assertThrows(HowtankApiException.class, streamClient2::getCurrentUserStreams);
     }
 
     @Test
@@ -310,7 +308,7 @@ public class StreamClientHttpTest {
         return expectation[0].getId();
     }
 
-    private String registerInvalidTokenExpectation(CommandType commandType,  List<Parameter> requestParams) {
+    private void registerInvalidTokenExpectation(CommandType commandType,  List<Parameter> requestParams) {
         List<Parameter> params = new ArrayList<>();
         params.add(new Parameter("command", commandType.getName()));
         params.add(new Parameter("mode", "expert"));
@@ -333,7 +331,5 @@ public class StreamClientHttpTest {
                 .withStatusCode(200)
                 .withBody(responseBody, MediaType.APPLICATION_JSON)
         );
-
-        return expectation[0].getId();
     }
 }
