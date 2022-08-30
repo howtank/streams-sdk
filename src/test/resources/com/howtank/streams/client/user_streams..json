@@ -1,0 +1,314 @@
+{
+  "streams": [
+    {
+      "id": "egypt",
+      "title": "Alexandria",
+      "description": "Alexandrie, Alexandra.",
+      "discoverable": true,
+      "channel_id": "private-local.stream.egypt",
+      "presence_id": "private-local.presence.stream-egypt",
+      "first_stream_color": "000000",
+      "second_stream_color": "F2F2F2",
+      "available_types": [
+        "group_chat",
+        "help",
+        "info_feed",
+        "level_up",
+        "new_member",
+        "smiley",
+        "thanks"
+      ],
+      "has_owner_access": true,
+      "all_users": false,
+      "order": 0,
+      "hosts": [
+        {
+          "host_id": "egypt",
+          "host_name": "Egypt",
+          "partner_id": "bf9fe2b7c3de11e4a6fc22000a9f07fc18bd4112",
+          "host_display_name": "Egypt",
+          "howtank_host": false
+        }
+      ],
+      "personal": false,
+      "poster": false
+    },
+    {
+      "id": "howtank_global_fr",
+      "title": "Howtank FR",
+      "description": "Primary stream of Howtank FR",
+      "discoverable": true,
+      "channel_id": "private-local.stream.howtank_global_fr",
+      "presence_id": "private-local.presence.stream-howtank_global_fr",
+      "first_stream_color": "1FA2FF",
+      "second_stream_color": "1FA2FF",
+      "has_owner_access": true,
+      "all_users": false,
+      "order": 2,
+      "hosts": [
+        {
+          "host_id": "howtank_global_fr",
+          "host_name": "Howtank FR",
+          "partner_id": "0d936d4ffdcb11e2afeb22000aa8245f5d071c7c",
+          "host_display_name": "Howtank FR",
+          "howtank_host": false
+        }
+      ],
+      "personal": false,
+      "poster": false
+    },
+    {
+      "id": "aabbccddf4c211e9b7390242ac14000b8aeebccc",
+      "title": "Montreal",
+      "discoverable": true,
+      "channel_id": "private-local.stream.aabbccddf4c211e9b7390242ac14000b8aeebccc",
+      "presence_id": "private-local.presence.stream-aabbccddf4c211e9b7390242ac14000b8aeebccc",
+      "first_stream_color": "000000",
+      "second_stream_color": "F2F2F2",
+      "available_types": [
+        "group_chat",
+        "help",
+        "info_feed",
+        "level_up",
+        "new_member",
+        "smiley",
+        "thanks"
+      ],
+      "has_owner_access": true,
+      "all_users": false,
+      "order": 3,
+      "hosts": [
+        {
+          "host_id": "canada",
+          "host_name": "Canada",
+          "partner_id": "302f691d097011e78df322000aa611441184c5b2",
+          "host_display_name": "Canada",
+          "howtank_host": false
+        }
+      ],
+      "personal": false,
+      "poster": false
+    },
+    {
+      "id": "india",
+      "title": "New Delhi",
+      "description": "Welcome to New Delhi !",
+      "discoverable": true,
+      "channel_id": "private-local.stream.india",
+      "presence_id": "private-local.presence.stream-india",
+      "first_stream_color": "000000",
+      "second_stream_color": "F2F2F2",
+      "available_types": [
+        "group_chat",
+        "help",
+        "info_feed",
+        "level_up",
+        "new_member",
+        "smiley",
+        "thanks"
+      ],
+      "has_owner_access": true,
+      "all_users": false,
+      "order": 4,
+      "hosts": [
+        {
+          "host_id": "india",
+          "host_name": "India",
+          "partner_id": "7383eba41bea11e49ab222000b13050c917d813e",
+          "host_display_name": "India",
+          "howtank_host": false
+        }
+      ],
+      "personal": false,
+      "poster": false
+    },
+    {
+      "id": "open_india",
+      "title": "Open New Delhi",
+      "discoverable": true,
+      "channel_id": "private-local.stream.open_india",
+      "presence_id": "private-local.presence.stream-open_india",
+      "first_stream_color": "000000",
+      "second_stream_color": "F2F2F2",
+      "available_types": [
+        "group_chat",
+        "help",
+        "info_feed",
+        "level_up",
+        "new_member",
+        "smiley",
+        "thanks"
+      ],
+      "has_owner_access": true,
+      "all_users": false,
+      "order": 5,
+      "hosts": [
+        {
+          "host_id": "open_india",
+          "host_name": "Open India",
+          "partner_id": "7383eba41bea11e49ab222000b13050c917d813e",
+          "host_display_name": "Open India",
+          "howtank_host": false
+        }
+      ],
+      "personal": false,
+      "poster": false
+    },
+    {
+      "id": "de6e2b7c3de11e455fc33000a9f07fc18bd4112",
+      "title": "Sydney",
+      "discoverable": true,
+      "channel_id": "private-local.stream.de6e2b7c3de11e455fc33000a9f07fc18bd4112",
+      "presence_id": "private-local.presence.stream-de6e2b7c3de11e455fc33000a9f07fc18bd4112",
+      "first_stream_color": "000000",
+      "second_stream_color": "F2F2F2",
+      "available_types": [
+        "group_chat",
+        "help",
+        "info_feed",
+        "level_up",
+        "new_member",
+        "share_chat",
+        "smiley",
+        "thanks"
+      ],
+      "has_owner_access": true,
+      "all_users": false,
+      "order": 6,
+      "hosts": [
+        {
+          "host_id": "australia",
+          "host_name": "Australia",
+          "partner_id": "1f77a92471f811e2b8fc22000a9e4df23a0b573c",
+          "host_display_name": "Australia",
+          "howtank_host": false
+        }
+      ],
+      "personal": false,
+      "poster": false
+    },
+    {
+      "id": "howtank",
+      "title": "Team howtank",
+      "description": "Primary stream of Team howtank",
+      "discoverable": true,
+      "channel_id": "private-local.stream.howtank",
+      "presence_id": "private-local.presence.stream-howtank",
+      "first_stream_color": "1FA2FF",
+      "second_stream_color": "5662E8",
+      "has_owner_access": true,
+      "all_users": false,
+      "order": 7,
+      "hosts": [
+        {
+          "host_id": "howtank",
+          "host_name": "Team howtank",
+          "partner_id": "0d936d4ffdcb11e2afeb22000aa8245f5d071c7c",
+          "host_display_name": "Team howtank",
+          "howtank_host": false
+        }
+      ],
+      "personal": false,
+      "poster": false
+    },
+    {
+      "id": "howtankcommunity_fr",
+      "title": "Widget howtank FR",
+      "description": "Primary stream of Widget howtank FR",
+      "discoverable": true,
+      "channel_id": "private-local.stream.howtankcommunity_fr",
+      "presence_id": "private-local.presence.stream-howtankcommunity_fr",
+      "first_stream_color": "1FA2FF",
+      "second_stream_color": "1FA2FF",
+      "has_owner_access": true,
+      "all_users": false,
+      "order": 8,
+      "hosts": [
+        {
+          "host_id": "howtankcommunity_fr",
+          "host_name": "Widget howtank FR",
+          "partner_id": "0d936d4ffdcb11e2afeb22000aa8245f5d071c7c",
+          "host_display_name": "Widget howtank FR",
+          "howtank_host": false
+        }
+      ],
+      "personal": false,
+      "poster": false
+    },
+    {
+      "id": "howtankworkshop_fr",
+      "title": "Workshop Howtank",
+      "description": "Primary stream of Workshop Howtank",
+      "discoverable": true,
+      "channel_id": "private-local.stream.howtankworkshop_fr",
+      "presence_id": "private-local.presence.stream-howtankworkshop_fr",
+      "first_stream_color": "1FA2FF",
+      "second_stream_color": "1FA2FF",
+      "has_owner_access": true,
+      "all_users": false,
+      "order": 9,
+      "hosts": [
+        {
+          "host_id": "howtankworkshop_fr",
+          "host_name": "Workshop Howtank",
+          "partner_id": "0d936d4ffdcb11e2afeb22000aa8245f5d071c7c",
+          "host_display_name": "Workshop Howtank",
+          "howtank_host": false
+        }
+      ],
+      "personal": false,
+      "poster": false
+    },
+    {
+      "id": "howtank_global_en",
+      "title": "howtank EN",
+      "description": "Primary stream of howtank EN",
+      "discoverable": true,
+      "channel_id": "private-local.stream.howtank_global_en",
+      "presence_id": "private-local.presence.stream-howtank_global_en",
+      "first_stream_color": "1FA2FF",
+      "second_stream_color": "1FA2FF",
+      "has_owner_access": true,
+      "all_users": false,
+      "order": 10,
+      "hosts": [
+        {
+          "host_id": "howtank_global_en",
+          "host_name": "howtank EN",
+          "partner_id": "0d936d4ffdcb11e2afeb22000aa8245f5d071c7c",
+          "host_display_name": "howtank EN",
+          "howtank_host": true
+        }
+      ],
+      "personal": false,
+      "poster": false
+    },
+    {
+      "id": "howtankcommunity_en",
+      "title": "howtank Widget EN",
+      "description": "Primary stream of howtank Widget EN",
+      "discoverable": true,
+      "channel_id": "private-local.stream.howtankcommunity_en",
+      "presence_id": "private-local.presence.stream-howtankcommunity_en",
+      "first_stream_color": "1FA2FF",
+      "second_stream_color": "1FA2FF",
+      "has_owner_access": true,
+      "all_users": false,
+      "order": 11,
+      "hosts": [
+        {
+          "host_id": "howtankcommunity_en",
+          "host_name": "howtank Widget EN",
+          "partner_id": "0d936d4ffdcb11e2afeb22000aa8245f5d071c7c",
+          "host_display_name": "howtank Widget EN",
+          "howtank_host": false
+        }
+      ],
+      "personal": false,
+      "poster": false
+    }
+  ],
+  "accepted": true,
+  "ctag": "5bcfb95e3d64b",
+  "api_version": 4
+}

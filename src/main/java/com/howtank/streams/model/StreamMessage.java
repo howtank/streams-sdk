@@ -1,77 +1,77 @@
 package com.howtank.streams.model;
 
-import com.google.gson.annotations.SerializedName;
-import lombok.Builder;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Data
-@Builder
+@NoArgsConstructor
 public class StreamMessage {
-    @SerializedName("id")
+    @JsonProperty("id")
     String id;
 
-    @SerializedName("publication_timestamp")
+    @JsonProperty("publication_timestamp")
     long publicationTimestamp;
 
-    @SerializedName("publication_state")
+    @JsonProperty("publication_state")
     String publicationState;
 
-    @SerializedName("local_id")
+    @JsonProperty("local_id")
     long localId;
 
-    @SerializedName("type")
+    @JsonProperty("type")
     String type;
 
-    @SerializedName("pinned")
+    @JsonProperty("pinned")
     boolean pinned;
 
-    @SerializedName("quoted_count")
+    @JsonProperty("quoted_count")
     int quotesCount;
 
-    @SerializedName("content")
+    @JsonProperty("content")
     String content;
 
-    @SerializedName("subject")
+    @JsonProperty("subject")
     String subject;
 
-    @SerializedName("url")
+    @JsonProperty("url")
     String url;
 
-    @SerializedName("chat_id")
+    @JsonProperty("chat_id")
     String chatId;
 
-    @SerializedName("level")
+    @JsonProperty("level")
     Integer level;
 
-    @SerializedName("reactions")
+    @JsonProperty("reactions")
     List<Reaction> reactions;
 
-    @SerializedName("quoted_message")
+    @JsonProperty("quoted_message")
     StreamMessage quotedMessage;
 
-    @SerializedName("user_id")
+    @JsonProperty("user_id")
     String userId;
 
-    @SerializedName("user_display_name")
+    @JsonProperty("user_display_name")
     String userDisplayName;
 
-    @SerializedName("user_expert_type")
+    @JsonProperty("user_expert_type")
     String userType;
 
-    @SerializedName("user_photo_key")
+    @JsonProperty("user_photo_key")
     String userPhotoKey;
 
-    @SerializedName("howtank_team")
+    @JsonProperty("howtank_team")
     boolean howtankTeam;
 
-    @SerializedName("source_host_id")
+    @JsonProperty("source_host_id")
     String sourceHostId;
 
-    @SerializedName("source_partner_id")
+    @JsonProperty("source_partner_id")
     String sourcePartnerId;
 
-    @SerializedName("user_anon")
+    @JsonProperty("user_anon")
     boolean anon;
 }

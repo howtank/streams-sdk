@@ -1,0 +1,5 @@
+{
+  "reason": "invalid_token",
+  "accepted": false,
+  "error": "The provided authentication token is incorrect"
+}

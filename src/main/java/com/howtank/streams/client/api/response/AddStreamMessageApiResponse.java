@@ -1,19 +1,19 @@
 package com.howtank.streams.client.api.response;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
 public class AddStreamMessageApiResponse extends ApiResponse{
-    @SerializedName("stream_publication_timestamp")
+    @JsonProperty("stream_publication_timestamp")
     private Long streamPublicationTimestamp;
 
-    @SerializedName("publication_timestamp")
+    @JsonProperty("publication_timestamp")
     private Long publicationTimestamp;
 
-    @SerializedName("stream_id")
+    @JsonProperty("stream_id")
     private String streamId;
 
-    @SerializedName("channel_id")
+    @JsonProperty("channel_id")
     private String channelId;
 }

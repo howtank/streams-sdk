@@ -1,19 +1,21 @@
 package com.howtank.streams.model;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.Set;
 
 @Data
+@NoArgsConstructor
 public class Reaction {
-    @SerializedName("content")
+    @JsonProperty("content")
     private String content;
 
-    @SerializedName("user_ids")
+    @JsonProperty("user_ids")
     private Set<String> userIds;
 
-    @SerializedName("first_appearance_date")
+    @JsonProperty("first_appearance_date")
     private Date firstAppearanceDate;
 }
