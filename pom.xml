@@ -40,6 +40,13 @@
         </developer>
     </developers>
 
+    <distributionManagement>
+        <repository>
+            <id>howtank-artifacts</id>
+            <url>https://artifacts.howtank.com/repository/howtank/</url>
+        </repository>
+    </distributionManagement>
+
     <build>
         <plugins>
             <plugin>
