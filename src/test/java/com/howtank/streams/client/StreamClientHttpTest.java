@@ -217,7 +217,7 @@ public class StreamClientHttpTest {
         Presence presence = presences.get(0);
         Assertions.assertEquals("1231131312dwqw", presence.getUser().getId());
         Assertions.assertEquals("ADMIN", presence.getUser().getDisplayName());
-        Assertions.assertEquals(1661304051000L, presence.getConnectionDate().getTime());
+        Assertions.assertEquals(1661329251000L, presence.getConnectionDate().getTime());
         Assertions.assertEquals(0L, presence.getUser().getPoints());
     }
 
