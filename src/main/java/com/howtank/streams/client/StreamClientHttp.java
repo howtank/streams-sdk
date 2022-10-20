@@ -53,7 +53,9 @@ public class StreamClientHttp implements StreamClient {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         objectMapper.configure(DeserializationFeature.READ_UNKNOWN_ENUM_VALUES_AS_NULL, false);
-        objectMapper.setDateFormat(DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.DEFAULT));
+        DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.DEFAULT);
+        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+        objectMapper.setDateFormat(dateFormat);
         return objectMapper;
     }
 
